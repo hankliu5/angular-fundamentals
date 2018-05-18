@@ -6,11 +6,10 @@ import { inject } from '@angular/core/testing';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   // styleUrls: ['./app.component.css']
-  template: `<div><app-simple-form>
-  </app-simple-form>
-    {{mail.message}}
-    <hr>
-    {{api}}
+  template: `<div>
+  <ul>
+  <li *ngFor="let message of mail.messages">{{message}}</li>
+  </ul>
   </div>`
 })
 export class AppComponent {
@@ -18,6 +17,5 @@ export class AppComponent {
 
   constructor(
     @Inject('mail') private mail,
-    @Inject('api') private api,
   ) {}
 }
