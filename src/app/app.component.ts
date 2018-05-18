@@ -13,7 +13,8 @@ import { inject } from '@angular/core/testing';
   <app-simple-form 
     *ngFor="let message of mail.messages" [message]="message.text" (update)="onUpdate(message.id, $event.text)">
   </app-simple-form>
-  </div>`
+  </div>`,
+  styles: [`app-simple-form {margin-bottom: 20px;}`]
 })
 export class AppComponent {
   title = 'Fundamentals';
