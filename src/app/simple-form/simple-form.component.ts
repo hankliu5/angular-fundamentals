@@ -4,14 +4,15 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-simple-form',
   template: `<div>
   {{message}}
-  <input #myInput type="text">
+  <input #myInput type="text" [(ngModel)]="message">
   <button (click)="onClick($event, myInput.value)">Click me!</button>
   </div>`,
   styles: []
 })
 export class SimpleFormComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+  }
   @Input() message;
 
   onClick(event, value) {
